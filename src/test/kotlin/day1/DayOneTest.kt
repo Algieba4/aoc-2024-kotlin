@@ -1,6 +1,5 @@
 package day1
 
-import day1.DayOneClass
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
