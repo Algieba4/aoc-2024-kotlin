@@ -3,13 +3,13 @@ package day2
 import java.io.File
 
 fun main() {
-    val dayTwoClass = dayTwoClass()
+    val dayTwoClass = DayTwoClass()
     dayTwoClass.dayTwoPartOne()
 //    println()
 //    DayTwoClass.dayOnePartTwo()
 }
 
-class dayTwoClass {
+class DayTwoClass {
 
     private var reports = emptyArray<Array<String>>()
 
@@ -23,6 +23,9 @@ class dayTwoClass {
 
         for(i in reports.indices ) {
             val report = reports[i]
+            if(i == 814) {
+                println("breakpoint")
+            }
             val value = convertArrayToString(report)
             if(evaluateSafety(report)) {
                 println("report $i is Safe with values $value")
@@ -47,17 +50,17 @@ class dayTwoClass {
         var ascending = false
         var previous = -1
         var safe = false
-        for(j in report.indices) {
+        for(i in report.indices) {
             if(previous == -1) {
-                ascending = report[j] < report[j + 1]
-                previous = report[j].toInt()
+                ascending = report[i].toInt() < report[i + 1].toInt()
+                previous = report[i].toInt()
             } else {
-                if((ascending) && (report[j].toInt() > previous) && (report[j].toInt() - previous < 4)) {
+                if((ascending) && (report[i].toInt() > previous) && (report[i].toInt() - previous < 4)) {
                     safe = true
-                    previous = report[j].toInt()
-                } else if((!ascending) && (report[j].toInt() < previous) && (previous - report[j].toInt() < 4)) {
+                    previous = report[i].toInt()
+                } else if((!ascending) && (report[i].toInt() < previous) && (previous - report[i].toInt() < 4)) {
                     safe = true
-                    previous = report[j].toInt()
+                    previous = report[i].toInt()
                 } else {
                     safe = false
                     break

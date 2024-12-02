@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class DayTwoTest {
-    private val dayTwoTest: dayTwoClass = dayTwoClass()
+    private val dayTwoTest: DayTwoClass = DayTwoClass()
 
     @Test
     fun testAllAscending() {
