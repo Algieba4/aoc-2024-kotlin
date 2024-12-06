@@ -64,7 +64,7 @@ class DayFiveClass {
         }
     }
 
-    // failed proof of concept 
+    // failed proof of concept
     fun setOrderingRules(orderingRules: List<Int>, before: Int, after: Int): List<Int> {
         val newOrderingRules = orderingRules.toMutableList()
 
